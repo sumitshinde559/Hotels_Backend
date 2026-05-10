@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 
 const cors = require("cors");
+
 const corsOptions = {
   origin: "*",
   credentials: true,
@@ -10,7 +11,7 @@ const corsOptions = {
 };
 
 app.use(express.json());
-
+app.use(cors(corsOptions));
 const { initializeDatabase } = require("./db/db.connect");
 
 const Hotel = require("./models/hotel.models");
